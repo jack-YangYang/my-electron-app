@@ -8,13 +8,17 @@ app.on('ready', () => {
 })
 
 app.on('window-all-closed', () => {
+    // 不是Mac OS系统
     if (process.platform !== 'darwin') {
+        console.log('window-all-closed => window-all-closed')
         app.quit()
     }
 })
 
+// Mac OS系统 时被激活
 app.on('activate', () => {
     if (!mainWindowIsExist()) {
+        console.log('activate', mainWindowIsExist())
         createMainWindow()
     }
 })

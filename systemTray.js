@@ -11,6 +11,7 @@ function initTray() {
         {
             label: '退出',
             click: () => {
+                // 定义一个变量 表示当前是退出程序 而不是关闭程序
                 app.isQuiting = true
                 app.quit()
             }
